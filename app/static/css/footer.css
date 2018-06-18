@@ -1,0 +1,13 @@
+.my_footer {
+    height: 78px;
+    width: 100%;
+    background: #202121;
+    margin-top: 70px;
+
+}
+.my_footer .footer_nav {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}

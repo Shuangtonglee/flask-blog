@@ -1,0 +1,55 @@
+<aside class="myaside">
+            <div class="focus-me">
+                <h4 class="index-title"><i class="el-heart"></i>关注我
+                    <small>Focus Me</small>
+                </h4>
+                <div class="icons">
+                    <div class="download"><a href=""><i class="el-download-alt"></i></a><h4>博客源码</h4></div>
+                    <div class="blg"><a href=""><i class="el-blogger"></i></a><h4>博客地址</h4></div>
+                    <div class="share"><a href="javascript:;"><i class="el-share-alt"></i></a><h4>分享本博</h4></div>
+                    <div class="mail-btn"><a href="javascript:;"><i class="el-envelope-alt"></i></a><h4 style="margin-left:25px; ">订阅我</h4></div> <!--href="javascript:; 点击a时就没有任何反应，否则会跳转-->
+                </div>
+
+
+                <div class="mail" style="display: none">
+                    <form style="font-size: 0">  <!--font-size: 0 使元素水平间隙为0-->
+                        <span>订阅</span>
+                    <input type="text" name="mail-box" placeholder="输入邮箱点击订阅吧！(暂无)" onfocus="this.placeholder=''"
+                    onblur="this.placeholder='输入邮箱点击订阅吧！(暂无)'">
+                        <i class="el-envelope"></i>
+                    </form>
+                    <i class="el el-remove"></i>
+                </div>
+
+
+                <div class="sharebox" style="display: none">
+                    <ul class="bdsharebuttonbox">
+                        <li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+                        <li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微"></a></li>
+                        <li><a href="#"  class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
+                        <li><a href="#"  class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></li>
+                    </ul>
+                    <i class="el el-remove"></i>
+                    <script>window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "32"
+                }, "share": {}
+            };
+            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+                </div>
+
+            </div>
+            <div class="weather">
+                <h4 class="index-title"> <i class="el-cloud"></i>天气
+                <small>Weather</small>
+                </h4>
+                <div style="margin: 0 10px 10px 15px"><iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&py=shanghai&num=5&site=12"></iframe>
+                <iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&py=qinghe&num=5&site=12"></iframe></div>
+            </div>
+</aside>

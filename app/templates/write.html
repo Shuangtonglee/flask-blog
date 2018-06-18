@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    body {
+        background: none!important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div>
+    {{ pagedown.include_pagedown() }}
+    <form method="post" name="my_form">
+            {{ form.hidden_tag() }}
+            {{ form.title(class='markdown-title',placeholder='请输入标题',autocomplete='off') }}
+            {% if form.title.errors %}
+                    <ul class="errors">{% for error in form.title.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+            {{ form1.categorys(class='category') }}
+            {{ form.picture(class='picture',placeholder='请输入图片链接') }}
+            {{ form.body(only_preview=True) }}
+            {% if form.body.errors %}
+                    <ul class="errors">{% for error in form.body.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+            {{ form.body(only_input=True, rows=10) }}
+
+    </form>
+</div>
+
+{% block footer %}
+{% endblock %}
+
+
+<script>
+        /*可能是每次输入新的内容，markdown 再次将全部内容转化为html，丢掉了原来higtligh.js 加在<code>上的class属性*，
+    导致每次高亮之后，再输入新的内容，高亮又会消失/
+     */
+    document.addEventListener("click",function(){
+        $('pre code').each(function(i, e) {hljs.highlightBlock(e)})
+    })
+</script>
+
+{% endblock %}
+

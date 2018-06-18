@@ -1,0 +1,59 @@
+.mysection {
+    float: left;
+    width: 65%;
+}
+
+.pic_loop{
+    width: 100%;
+}
+
+.loop-container{
+    width: 100%;
+    overflow: hidden;
+}
+.loop-container ul {
+    display: flex;
+    width: 100%;
+
+
+}
+.loop-container >ul >li {
+    flex-shrink: 0;
+    width: 100%;
+
+}
+.loop-container .pic1 img {
+    opacity: 1;
+    width: 100%;
+    animation: loop 16s linear infinite;
+    animation-delay: 0s;
+
+}
+.loop-container .pic2 img{
+    opacity: 1;
+    width: 100%;
+    animation: loop1 16s linear infinite;
+    animation-delay: 8s;/*放在animation 后面才有效，不知原因*/
+
+}
+
+@keyframes  loop{
+
+    0% {transform:translateX(-100%);opacity:0 }
+    2% {transform:translateX(0%);opacity:1 }
+    49% {transform:translateX(0%);opacity:1 }
+    50% {transform:translateX(-100%);opacity: 0 }
+    100% {transform:translateX(-100%);opacity: 0 }
+
+
+}
+@keyframes  loop1{
+
+    0% {transform:translateX(-200%);opacity:0 }
+    2% {transform:translateX(-100%);opacity:1 }
+    49% {transform:translateX(-100%);opacity:1 }
+    50% {transform:translateX(-200%);opacity: 0 }
+    100% {transform:translateX(-200%);opacity: 0 }
+
+}
+

@@ -1,0 +1,59 @@
+.markdown-title{
+    width: 96%;
+    margin: 0 20px 0 20px;
+    border: none;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+
+}
+.category {
+    width: 48%;
+    margin: 0 20px 20px ;
+    border: none;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    outline: none;
+}
+
+.picture {
+    width: 48%;
+    margin: 0 0 20px 0;
+    border: none;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.flask-pagedown-input {
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    width: 48%;
+    font-size: 16px;
+    line-height: 27px;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    height: 490px;
+    background-color: #F9F9F5;
+    color: #2C3E50;
+    border: none;
+    outline: none;
+
+
+}
+.flask-pagedown-preview {
+    float: right;
+    width: 48%;
+    font-size: 16px;
+    line-height: 27px;
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    height: 490px;
+    color: #2C3E50;
+    border-left:  1px dashed #BBB ;
+    outline: none;
+    background-color: #f0f0f0;
+    overflow: scroll;
+}
+
+

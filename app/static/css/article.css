@@ -1,0 +1,119 @@
+.article_list{
+    font-size: 71.4%; /*body 的font-size:14px 10/14*/
+}
+
+.article_list {
+    margin-top: 4em;
+    width: 100%;
+}
+
+.article_list .new-h4 {
+    text-indent: 0.5em;
+    color: #0181da;
+}
+
+.article_list >h4 >i{
+    margin-right: 0.5em;
+    color: #ff6700;
+}
+.article_list >h4 >small{
+    color: slategray;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.article {
+    position: relative;
+    width: 100%;
+    margin-top: 2em;
+    background: rgba(255, 255, 255, .5);
+    opacity: 1;
+
+}
+
+
+.image {
+    width: 20%;
+    padding: 2em 1.5em;
+    float: left;
+    margin-right: 0;
+
+}
+.article .img1 {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.article .img2 {
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+}
+
+.article .content {
+    float: right;
+    width: 70%;
+    margin-top: 2em;
+    overflow: hidden;
+    margin-right: 2.5em;
+}
+
+.article .content .blue-text {
+    color: #0181da;
+}
+.article .content >h4 {
+    font-size: 1.8em;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.article .content >p {
+    font-size: 1.3em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.article .content >ul >li{
+    display: inline-block;
+    max-width: 150px;
+}
+.article .content >ul >li >a{
+    text-indent: 0.3em;
+    color: #ff6700;
+    font-size: 1.2em;
+}
+
+.article .content >ul >li >span {
+    margin-left: 0.3em;
+    color: #888;
+    font-size: 1.2em;
+    margin-right: 1.5em;
+}
+
+.article .content >ul >li:last-child{
+    float: right;
+}
+
+
+@media screen and (min-width:320px) and (max-width:1023px)  { .article .content {
+            width: 60%;
+        }
+        }
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;}

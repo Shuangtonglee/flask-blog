@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% import "_macros.html" as macros %}
+
+
+
+{% block content %}
+{% include "right.html" %}
+    {{ moment.include_moment() }}
+    {{ moment.lang("zh-CN") }}
+    <section class="mysection">
+            <div class="article_list">
+                <h4 class="new-h4" style="font-size: 14px;font-weight: normal;"> <i class="el-th-list" style="color: #ff6700;display: inline-block"></i>列表&nbsp;&nbsp;> &nbsp;&nbsp;
+                <span class="orange-text">
+                    {% if category|string()=='Python' %} Python 大法 {% elif category|string()=='Spider' %} 爬虫
+                    {% elif category|string()=='Front-end' %} 前端 {% elif category|string()=='Database' %}数据库 {% else %}全部{% endif %}
+                </span>
+                </h4>
+                {% include "arc_thumbnail.html" %}
+            </div>
+            {% if pagination %}
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, '.all') }}
+            </div>
+            {% endif %}
+    </section>
+{% endblock %}

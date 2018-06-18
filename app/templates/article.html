@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ moment.include_moment() }}
+    {{ moment.lang("zh-CN") }}  <!--使moment.js支持汉语-->
+    <link href="../static/css/styles/dark.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/comments.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/highlight.pack.js"></script>
+    <script src="../static/js/highlightjs-line-numbers.min.js"></script>
+    <script> hljs.initHighlightingOnLoad();</script>
+    <script> hljs.initLineNumbersOnLoad();</script>
+    <style>
+        td.hljs-ln-numbers {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            color: #ccc;
+            border-right: 1px solid #CCC;
+            vertical-align: top;
+            padding-right: 5px;
+        }
+
+        td.hljs-ln-code {
+            padding-left: 10px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+{% include "right.html" %}
+<article>
+    <h3 class="arc-title">
+        {{ post.title }}
+    </h3>
+    <div class="arc-details">
+            <ul>
+                <li><a href="#"><i class="el-time"></i></a> <span>{{ moment(post.timestamp).format('LL') }}</span></li>
+                <li><a href="#"><i class="el-user"></i></a> <span>李小离</span></li>
+                <li><a href="#"><i class="el-comment"></i></a> <span>{{ post.comments.count() }}</span></li>
+                <li><a href="#"><i class="el-eye-open"></i></a> <span>{{ post.views }}</span></li>
+            </ul>
+    </div>
+
+    <div class="arc-body">
+        {% if post.body_html %}
+            {{ post.body_html|safe }}
+        {% else %}
+            {{ post.body }}
+        {% endif %}
+    </div>
+
+    <div class="arc-fx">
+        <a class="fx-btn" href="javascript:;">分享</a>
+
+        <div class="sharebox arc-position" style="display: none">
+            <ul class="bdsharebuttonbox">
+                <li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+                <li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微"></a></li>
+                <li><a href="#"  class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
+                <li><a href="#"  class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></li>
+            </ul>
+            <i class="el el-remove"></i>
+                    <script>window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "32"
+                }, "share": {}
+            };
+            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        </div>
+    </div>
+
+    <div style="width: 65%;margin-top: 100px">
+        <form method="post">
+            {{ form.hidden_tag() }}
+            {{ form.body(class='arc-comment') }}
+            {% if form.body.errors %}
+                    <ul class="errors">{% for error in form.body.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+                {{ form.submit(class='comment-button') }}
+            {% else %}
+                <a class="comment-a" href="{{ url_for('auth.login',next=next ) }}">登陆</a>
+            {% endif %}
+        </form>
+    </div>
+    <div class="comment-line">
+        <span>评论</span>
+        <div style="border-bottom: 1px solid #4398ed; margin-left: 65px;">
+        </div>
+    </div>
+
+    <div class="comments-box" style="width: 80%" >
+                <div class="arc-com comment comment-1">
+                    <ul>
+                        {% if comments %}
+                            {% for comment in comments %}
+                                <li style="position: relative"><a href="javascript:;" ><i class="el-book"></i><span style="margin-left: 10px;text-overflow: ellipsis">{{ comment.body }}</span></a>
+                                    <small class="time">{{ moment(comment.timestamp).format('YYYY-MM-DD HH:mm') }}</small><span class="author">—  <i class="el-user" style="margin: 3px"></i> {{ comment.author.username }}</span>
+                                    </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+
+                </div>
+        </div>
+</article>
+<script>
+    /*删除每个代码块的最后一行*/
+    window.onload = function(){
+        /*$('.hljs-ln tr:last').remove();只能删除最后一个代码块最后一行*/
+        $(".hljs-ln ").find("tr:last").remove()
+}
+</script>
+
+{% endblock %}
+

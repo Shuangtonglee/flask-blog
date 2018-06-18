@@ -1,0 +1,235 @@
+        .orange-text{color:#ff6700;}
+        i {
+            color: #ff6700;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 24px;
+            margin: 0;
+            padding: 0;
+            min-width: 320px;
+            display: block;
+        }
+
+        @media screen and (min-width:320px) and (max-width:1023px)  { body{
+            font-size: 12px;
+        }
+        }
+
+        li {
+            list-style: none; /*去掉前面点号*/
+        }
+        a {
+            text-decoration: none; /*去掉下划线*/
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block;
+        }
+        body {
+            background: #e9ecd7 url("../images/bg0.jpg");
+            background-attachment: fixed; /*图像不会随页面的其余部分滚动*/
+            background-repeat: no-repeat; /*图片不够大时，图片不重复*/
+            background-size: 100% 100%;
+        }
+        body:after {           /*body下层元素*/
+            content: '';
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.5);
+            z-index: -1;
+        }
+        .nobg {
+            /*background-image: none!important;  !*!important不会被覆盖*!*/
+            background-color: #fff!important;
+        }
+        header {
+            width: 100%;
+            height:70px;
+            background: rgba(255, 255, 255, .85);
+            box-shadow: 0 0 5px #13c5f8;
+            position: fixed;
+            z-index: 10;
+        }
+
+
+        header .top {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            height: 100%;
+            position: relative;
+        }
+
+        header .top .top-left {
+            width: 40%;
+            float: left;
+            overflow: hidden;  /*隐藏超出header的部分*/
+            height: 100%;
+            position: relative;
+        }
+        header .mynav {
+            width: 60%;
+            float: right;
+            height: 100%;
+            position: relative;
+        }
+
+        .top .logo {
+            width: 33%;
+            float: left;
+        }
+        .top .logo img {
+            width: 90%;
+            padding-top: 0.2em;
+        }
+
+        .web-xiaoxi {
+            margin-top: 25px;
+            width: 67%;
+            float: left;
+            position: relative;   /*方便子元素i定位*/
+            font-size: 12px;
+            color:#777;
+
+        }
+        .web-xiaoxi i{
+            position: absolute;   /*float:left 和 margin-top:6px 也可以 */
+            left:0;
+            top: 6px;
+            color: inherit;
+        }
+        .multline {
+            height: 25px;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+        .multline li {
+            line-height: 25px;
+            white-space: nowrap;  /*不换行*/
+            text-overflow: ellipsis;  /*显示省略符号来代表被修剪的文本。*/
+            overflow: hidden;
+        }
+
+        .mynav >ul {
+        }
+
+        .mynav >ul >li {
+            text-align: center;
+            width: 12.5%;
+            font-size: 16px;
+            color: inherit;
+            height: 100%;
+            float: right;
+            position: relative;
+        }
+
+        .mynav >ul >li >a:hover {
+            background-color: #13c5f8;
+            color: white;
+            font-size: 20px;
+        }
+
+        .mynav >ul >li >a {
+            display: inline-block;
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            color: #ff6700;
+            transition: all 0.2s;
+        }
+
+        @-webkit-keyframes zuo1{
+            0%{transform:translateX(-300px);-webkit-transform:translateX(-300px);opacity:0;}
+
+            100%{transform:translateX(0px);-webkit-transform:translateX(0px);opacity:1;}
+
+}
+        @keyframes zuo1{
+            0%{transform:translateX(-300px);-webkit-transform:translateX(-300px);opacity:0;}
+
+            100%{transform:translateX(0px);-webkit-transform:translateX(0px);opacity:1;}
+
+        }
+
+        @-webkit-keyframes zuo2 {
+            0%{transform: translateX(0px);-webkit-transform: translateX(0px);opacity: 1;}
+            100%{transform: translateX(300px);-webkit-transform: translateX(300px);opacity: 0;}
+        }
+        @keyframes zuo2 {
+            0%{transform: translateX(0px);-webkit-transform: translateX(0px);opacity: 1;}
+            100%{transform: translateX(300px);-webkit-transform: translateX(300px);opacity: 0;}
+        }
+        .drop .el-chevron-down {
+            font-size: 12px;  /*箭头大小*/
+            margin-left: 10px;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .drop:hover .el-chevron-down {
+            transform: rotate(180deg);
+
+        }
+
+        .drop-nav {
+
+        }
+
+        .drop-nav {
+            position: absolute;
+            display: none;
+            width: 150px;
+            top:70px;
+            background: rgba(255, 255, 255, .85);
+            box-shadow: 0 0 5px lightgray;
+            box-sizing: border-box;
+
+        }
+        .drop-nav li {
+            padding: 10px 0;
+            display: block;
+            border-bottom: 1px dotted lightgray;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+       .drop-nav li:hover {
+            background-color: #13c5f8;
+            font-size: 16px;
+        }
+
+        .drop-nav li:hover a{
+            color: white;
+        }
+
+        .drop-nav li a {
+            display: inline-block;
+            color: inherit;
+            height: 100%;
+            width: 100%;
+        }
+
+
+div#tooltip {position:absolute; z-index:1000;width:auto!important;background:linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.7),rgba(255,255,255,1)); text-align:left; padding:5px 10px;border-radius:5px;
+background: -webkit-linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 1));
+}
+div#tooltip p {color:#ff6700;font-size:12px;}
+div#tooltip p:after{
+	content:'';
+	width: 0;
+	height: 0;
+	position:absolute;
+	left:10%;
+	top:-8px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid rgba(255,255,255,0.95);
+}

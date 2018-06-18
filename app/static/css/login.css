@@ -1,0 +1,84 @@
+.login-container{
+    padding: 0 40px 36px;
+    text-align: center;
+    width: 432px;
+    margin: 0 auto; /*块级元素水平居中*/
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+.a-line {
+    border-bottom: 1px solid #ebebeb ;
+}
+.Input-wrapper {
+    display: flex;
+    width: 100%;
+    height: 48px;
+
+}
+.Input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.Submit-wrapper {
+    width: 100%;
+
+}
+
+.Submit-button {
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+    width: 100%;
+    background: #0084ff;
+    margin-top: 30px;
+    height: 36px;
+    border: none;
+}
+
+.Submit-wrapper span a{
+    float: right;
+    margin-top: 15px;
+    color: gray;
+}
+
+button:hover{
+    border-color: #0077e6;
+    background-color: #0077e6;
+}
+
+.switch-register {
+    display: flex;
+    align-items: center; /*上下居中*/
+    justify-content: center; /*左右居中*/
+    font-size: 16px;
+    border-top: 1px solid #ebebeb;
+    padding: 0 40px 0 40px;
+    background: #f6f6f6;
+    height: 60px;
+    text-align: center;
+    width: 432px;
+    margin: 0 auto;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+.switch-register a{
+    color:  #175199;
+}
+
+.remember_me {
+    float: left;
+    margin-top: 20px;
+    color: gray;
+}
+
+.remember_me_label {
+    float: left;
+    margin-top: 15px;
+    color: gray;
+}

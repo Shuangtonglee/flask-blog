@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="unconfirmed-container">
+    <h1> 你好！{{ current_user.username }}</h1>
+    <p>您还没有确认账户。请检查您的邮箱，是否收到发送给您的确认邮件。</p>
+    <p> 需要重新发送一封确认邮件？<a href="{{ url_for('.resend_confirmation') }}">点击这里</a></p>
+
+</div>
+
+
+{% endblock %}

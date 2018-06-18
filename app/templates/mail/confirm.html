@@ -1,0 +1,9 @@
+<p>你好！{{ user.username }}，</p>
+
+<p>欢迎来到李小离的博客！</p>
+
+<p>为了确认您的账户，请点击以下链接：</p>
+
+<p>{{ url_for('auth.confirm',token=token,_external=true)}}</p>
+
+<p>谢谢！</p>

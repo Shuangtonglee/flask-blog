@@ -1,0 +1,19 @@
+<section class="mysection">
+            <div class="pic_loop">
+                <div class="loop-container">
+                    <ul>
+                        <li class="pic1"><img src="../static/images/python.jpg" alt="life is short,use python"></li>
+                        <li class="pic2"><img src="../static/images/snow.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article_list">
+                <h4 class="new-h4"> <i class="el-certificate" style="color: #ff6700;display: inline-block"></i>最新文章
+                <small>New Article</small>
+                </h4>
+
+                {{ moment.include_moment() }}
+                {{ moment.lang("zh-CN") }}
+                {% include "arc_thumbnail.html" %}
+            </div>
+</section>

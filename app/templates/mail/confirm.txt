@@ -1,0 +1,9 @@
+你好 {{ user.username }}，
+
+欢迎来到李小离的博客！
+
+为了确认您的账户，请点击以下链接：
+
+{{ url_for('auth.confirm',token=token,_external=true)}}
+
+谢谢！

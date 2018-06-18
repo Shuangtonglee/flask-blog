@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}  <!--使write.html 能添加css-->
+    {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no"/>
+    <title>李小离-博客</title>
+    <link href="../static/css/header.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/aside.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/pic-loop.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/article.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/login.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/footer.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/error.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/flash.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/unconfirmed.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/edit-article.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/arc.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/paginate.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-1.11.1.js"></script>
+    <script src="../static/js/my.js"></script>
+    <script src="../static/js/tooltip.js"></script>
+    <link href="../static/css/elusive-icons.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/icon/favicon.ico') }}" type="image/x-icon">
+    <link href="../static/css/styles/dark.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery-1.11.1.js"></script>
+    <script src="../static/js/highlight.pack.js"></script>
+</head>
+<body class="nobg">
+    {% block header %}
+    {% include "header.html" %}
+    {% endblock %}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class="flash ">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+</body>
+</html>
+

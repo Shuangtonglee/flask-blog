@@ -1,0 +1,395 @@
+.container{width:100%;max-width:1300px;min-width:320px;margin:auto;overflow:hidden;padding-top:100px;}
+
+.focus-me >h4 {
+    padding: 10px 0;
+    margin: 0;
+    text-indent: 5px;
+
+}
+.myaside {
+    width: 32%;
+    float: right;
+}
+.index-title {
+    font-size: 14px;
+    color: #0181da;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.index-title small {
+    color: #bcbcbc;
+    margin-left: 5px;
+    font-size: 12px
+}
+
+.focus-me {
+    margin-bottom: 30px;
+    position: relative;
+    background: rgba(255, 255, 255, .5);
+    opacity: 1;
+}
+
+.focus-me >h4 >i {
+    color: #ff6700;
+    margin-right: 5px;
+    font-size: 8px;
+
+}
+.focus-me .icons {
+}
+
+.focus-me .icons >div >h4 {
+    color: #777;
+    margin-left: 30px;
+    margin-top: 0;
+    font-weight: normal;
+}
+.focus-me .icons >div >a:hover {
+    opacity: 0.8;
+    transform: rotate(360deg) scale(1.3);
+}
+
+.focus-me .icons >div {
+    display: inline-block;
+}
+
+.focus-me .icons div a {      /*没有此样式rotate(360deg)不能起作用，改为.focus-me .icons >div >a:hover i也不行，不知原因*/
+    display: inline-block;    /*inline 动画失效*/
+    transition: all 0.8s;
+}
+
+.focus-me .icons .download>a >i{
+    font-size: 50px;
+    color: #0cabd3;
+    margin: 20px 20px 10px 30px;
+}
+
+
+.focus-me .icons .blg>a >i{
+    font-size: 50px;
+    color: #ee4f08;
+    display: inline-block;
+    margin: 20px 20px 10px 30px;
+}
+
+
+.focus-me .icons .share>a >i{
+    font-size: 50px;
+    color: #8aee08;;
+    display: inline-block;
+    margin: 20px 20px 10px 30px;
+}
+
+
+.focus-me .icons .mail-btn>a >i{
+    font-size: 50px;
+    color: #0cd38f;
+    display: inline-block;
+    margin: 20px 20px 10px 20px;
+}
+
+
+.weather {
+    margin-bottom: 60px;
+    position: relative;
+    background: rgba(255, 255, 255, .5);
+}
+
+
+.weather >h4 {
+    padding: 10px 0;
+    margin: 0;
+    text-indent: 5px;
+
+}
+.weather >h4 >i {
+    color: #ff6700;
+    margin-right: 5px;
+    font-size: 8px;
+
+}
+
+
+.mail {
+    background: rgba(255, 255, 255, .9);
+    margin: 0;
+    width: 80%;
+    position: absolute;
+    box-shadow: 0 0 20px lightslategray;
+    z-index: 999;
+}
+
+.mail .el.el-remove {
+    cursor: pointer;
+    color: #ff6700;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.mail >form >span {
+    display: inline-block;
+    background: #0ddb9e;
+    color: white;
+    margin: 35px 0 0 25px;
+    width: 51px;
+    text-align: center; /*左右居中*/
+    font-size: 14px;
+    line-height: 32px; /*height没有设置，line-height 即为height，两者相等，文字上下居中，若只设置height 32px，baseline下移，导致元素下移
+                        可以通过设置vertical-align:top来避免 不过文字就不能上下对齐了*/
+ /*   height: 32px;
+    vertical-align: top;*/
+}
+
+
+.mail >form >i {
+    font-size: 43px;
+    margin-top: 30px;
+    color: #0ddb9e;
+    vertical-align: top;   /*默认对齐方式为baseline,input baseline 不在input底边缘，和 i对齐时会下沉；设置为top 之后，
+                            i和整个line-boxes 上边缘对齐，input还是baseline 对齐，互不影响。当然也可以甚至absolute脱离文档流*/
+}
+form {
+    margin-bottom: 30px;
+}
+form >input {
+    height: 27px;
+    margin: 35px 0 0 0;
+    text-indent: 5px;
+    font-family: "Microsoft YaHei", sans-serif;
+    width: 180px;
+    font-size: 12px;
+}
+.mail >form >input:focus {
+    outline: none;
+    border:#ff6700 1px solid;
+    box-shadow: 0 0 8px rgba(255, 103, 0,0.7);
+}
+
+
+.sharebox{border-radius:5px;position:absolute;background:rgba(255,255,255,0.9);width:350px;box-shadow:0 0 15px #ccc;border:1px solid #ccc;z-index:999;}
+
+.sharebox .bdsharebuttonbox{padding:20px 0;margin:0;}
+.bdsharebuttonbox{padding:10px 0 25px 0;text-align:center;margin:auto;overflow:hidden!important;}
+
+.bdsharebuttonbox li {
+    display: inline;
+}
+
+
+
+.bdsharebuttonbox a{
+    display: inline-block;
+    background: url("../images/icon/bd-fx.png") no-repeat!important;
+    height: 50px!important;
+    width: 50px!important;
+    margin:0 3.5%!important;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.bdsharebuttonbox .bds_weixin{
+    background-position: 0 4%!important;
+    transition: all 0.2s;
+}
+
+.bdsharebuttonbox .bds_weixin:hover{
+    background-position: 0 90%!important;
+
+}
+
+.bdsharebuttonbox .bds_tsina{
+    background-position: 33% 4%!important;
+    transition: all 0.2s;
+}
+
+.bdsharebuttonbox .bds_tsina:hover{
+    background-position:33% 90%!important;
+}
+
+.bdsharebuttonbox .bds_qzone{
+    background-position: 66% 4%!important;
+    transition: all 0.2s;
+}
+
+.bdsharebuttonbox .bds_qzone:hover{
+    background-position:66% 90%!important;
+}
+
+.bdsharebuttonbox .bds_tieba{
+
+    background-position: 99.5% 4%!important;
+    transition: all 0.2s;
+}
+
+.bdsharebuttonbox .bds_tieba:hover{
+    background-position:99.5% 90%!important;
+}
+.bdshare-button-style1-32 a{float:none!important;}
+
+.sharebox .el.el-remove {
+    color: #ff6700;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+
+.comments-box {
+    background: rgba(255, 255, 255, .5);
+}
+
+.comments-box .title {
+    width: 49.9%;
+    text-align: center;
+    height: 60px;
+    /*background-color: #0ddb9e;*/
+    display: inline-block;
+}
+
+
+
+.comments-box .title-2 {
+    float: right;
+}
+
+.comments-box .title span{
+    line-height: 60px;
+    margin-left: 5px;
+}
+
+
+
+.title a {
+    color: inherit;
+    display: block;
+}
+
+.title-active {
+    background-color: #0ddb9e;
+    color: white;
+}
+
+.title-active  i{
+    color: white;
+}
+
+.title-active i:after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    right: 0;
+    top:38px;
+    height: 0;
+    width: 0;
+    border: 10px solid;
+    border-color:#0ddb9e transparent transparent transparent;
+}
+
+.comments-box .comment {
+    float: left;
+    width: 100%;
+}
+
+.comment-2 {
+    display: none;
+}
+
+.comment ul{
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 100%;
+}
+.comment ul li {
+    margin-bottom: 20px;
+    width: 80%;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.comment ul li:last-child{
+    border-bottom: none;
+}
+
+.comment-1 a{
+    color: #0181da;
+    margin-left: 10px;
+    display: block;
+}
+
+.comment .author{
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.comment-2 li:nth-of-type(1) span:before {
+    content: "1";
+    background-color: #e71555;
+}
+.comment-2 li:nth-of-type(2) span:before {
+    content: "2";
+    background-color: #16d083;
+}
+.comment-2 li:nth-of-type(3) span:before {
+    content: "3";
+    background-color: #ff6700;
+}
+.comment-2 li:nth-of-type(4) span:before {
+    content: "4";
+    background-color: #857479;
+}
+.comment-2 li:nth-of-type(5) span:before {
+    content: "5";
+    background-color: #857479;
+}
+.comment-2 li:nth-of-type(6) span:before {
+    content: "6";
+    background-color: #857479;
+}
+
+
+.comment-2 span:before {
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+    width: 20px;
+    height: 23px;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.comment-2 a{
+    font-size: 13px;
+    color: #777;
+    display: inline-block;
+}
+.comment-2 b {
+    font-weight: normal;
+    position: absolute;
+    right: 50px;
+}
+
+
+
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+
+
+

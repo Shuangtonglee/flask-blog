@@ -1,0 +1,23 @@
+<aside class="myaside">
+    <div class="comments-box clearfix" >
+            <div class="title title-1 title-active"><a href="javascript:;"><i class="el-comment-alt"></i><span>最新评论</span></a></div>
+            <div class="title title-2"><a href="javascript:;"><i class="el-signal"></i><span>文章排行</span></a></div>
+            <div class="comment comment-1">
+                <ul>
+                    {% if comments.count() <=10 %}{% set comments=comments %}{% else %}{% set comments=comments[0:10] %}{% endif %}
+                    {% for comment in comments %}
+                    <li><a href="javascript:;"><i class="el-book"></i><span style="margin-left: 10px;text-overflow: ellipsis">{{ comment.body }}</span></a>
+                        <span class="author">—  <i class="el-user" style="margin: 3px"></i> {{ comment.author.username }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="comment comment-2">
+                <ul>
+                    {% if posts.count() <=6 %}{% set posts=posts %}{% else %}{% set posts=posts[0:6] %}{% endif %}
+                    {% for post in posts|sort(attribute='views',reverse = True) %}
+                    <li><span></span><a href="{{ url_for('.articles',id=post.id) }}">{{ post.title }}<b><i class="el-eye-open"></i> ({{ post.views }})</b></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+</aside>

@@ -1,0 +1,25 @@
+{% for post in posts %}
+    <div class="article clearfix">
+        <div class="image">
+            <img class="img1" src="{{ post.picture }}" />
+        </div>
+        <img class="img2" {% if post.views >= 10 %} src="../static/images/icon/hot.gif"
+       {% else %}src="../static/images/icon/tj.gif" {% endif %}/>
+        <div class="content">
+            <h4><a class="blue-text" href="{{ url_for('.articles',id=post.id) }}">{{ post.title }}</a></h4>
+            <p>
+                {{ post.body|truncate_html(90) }}
+            </p>
+            <ul>
+                <li><a href="#"><i class="el-time"></i></a> <span>{{ moment(post.timestamp).format('LL') }}</span></li>
+                <li><a href="#"><i class="el-user"></i></a> <span>李小离</span></li>
+                <li><a href="#"><i class="el-comment"></i></a> <span>{{ post.comments.count() }}</span></li>
+                <li><a href="#"><i class="el-eye-open"></i></a> <span>{{ post.views }}</span></li>
+                <li><a href="#"><i class="el-th-list"></i></a> <span>
+                    {% if post.category|string() == 'Python' %} Python 大法 {% elif post.category|string() == 'Spider' %} 爬虫
+                    {% elif post.category|string() == 'Front-end' %} 前端 {% elif post.category|string() == 'Database' %}数据库 {% endif %}
+                </span></li>
+            </ul>
+        </div>
+</div>
+{% endfor %}

@@ -1,0 +1,62 @@
+<header>
+        <div class="top">
+            <div class="top-left">
+                <div class="logo">
+                    <a href="{{ url_for('main.index') }}">
+                        <img src="../static/images/h.gif" />
+                    </a>
+                </div>
+                <div class="web-xiaoxi">
+                    <i class="el el-speaker"></i>
+                    <ul class="multline">
+                        <li>床前明月光</li>
+                        <li>疑是地上霜</li>
+                        <li>举头望明月</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="mynav">
+                <ul class="orange-text">
+                    <li>{% if current_user.is_authenticated %}
+                    <li class="drop drop1">
+                        <a href="">{{ current_user.username|string()|truncate_html(4) }}<i class="el-chevron-down"></i> </a>
+                        <div class="drop-nav orange-text drop1-nav">
+                            <ul>
+                                <li><a href="{{ url_for('auth.change_password')}}">修改密码</a></li>
+                                <li><a href="{{ url_for('auth.logout') }}">登出</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% else %}
+                    <a href="{{ url_for('auth.login') }}">登录</a>{% endif %}</li>
+
+                    {% if current_user.role|string() == 'Admin' %}
+                    <li><a href="{{ url_for('main.write') }}">写文章</a></li>
+                        {% if endpoint == '.write' or endpoint == '.edit' %}
+                            <li><a href='javascript:document.my_form.submit();'>发布</a></li><!--a标签实现表单提交功能-->
+                        {% elif endpoint == '.articles' %}
+                            <li><a href="{{ url_for('main.edit',id=post.id ) }}">编辑</a></li>
+                        {% endif %}
+                    {% endif %}
+                <li><a href="{{ url_for('main.all') }}">全部文章</a></li>
+                 <li class="drop drop2">
+                        <a href="">分类<i class="el-chevron-down"></i> </a>
+                        <div class="drop-nav orange-text drop2-nav">
+                            <ul>
+                                <li><a href="{{ url_for('main.category',category='Python')}}">Python大法</a></li>
+                                <li><a href="{{ url_for('main.category',category='Spider')}}">爬虫</a></li>
+                                <li><a href="{{ url_for('main.category',category='Front-end')}}">前端</a></li>
+                                <li><a href="{{ url_for('main.category',category='Database')}}">数据库</a></li>
+                                <li><a href="{{ url_for('main.category',category='Essay')}}">随笔</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                <li><a href="{{ url_for('main.index')}}">首页</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!--”url_for()”函数的调用就在本蓝图下，那蓝图名可以省略，但必须留下”.”表示当前蓝图;如果调用的函数在另一个蓝图下，蓝图名必须保留-->
+<!--header.html 在蓝图main(比如index 函数)和auth(比如login)都会调用到，所以要加蓝图名。-->
+
