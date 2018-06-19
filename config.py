@@ -19,8 +19,19 @@ class DevelopmentConfig(Config):
     FLASKY_POSTS_PER_PAGE = 6
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'data.sqlite')
 
+class HerokuConfig(Config):
+    MAIL_SERVER = 'smtp.qq.com'
+    MAIL_PORT = 465
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    FLASKY_POSTS_PER_PAGE = 6
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'data.sqlite')
+
 
 config = {
     'development':DevelopmentConfig,
+    'heroku' : HerokuConfig,
     'default': DevelopmentConfig,
 }
