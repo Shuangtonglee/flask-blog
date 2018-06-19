@@ -1,11 +1,11 @@
+import os
 from flask_migrate import  MigrateCommand,Migrate
 from flask_script import Shell,Manager
-
 from app.models import User,Role,Category
 from app.truncate import truncate_html
 from app import create_app,db
 
-app = create_app('default')
+app = create_app(os.getenv('BLOG_CONFIG') or 'default')
 manager = Manager(app)
 migrate = Migrate(app,db)
 
