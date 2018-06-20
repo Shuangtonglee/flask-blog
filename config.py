@@ -9,6 +9,10 @@ class Config:
     MAIL_SUBJECT_PREFIX = '[李小离的博客]'
     MAIL_SENDER = 'Admin <1219800771@qq.com>'
 
+    @staticmethod
+    def init_app(app):
+        pass
+
 class DevelopmentConfig(Config):
     MAIL_SERVER = 'smtp.qq.com'
     MAIL_PORT = 465
