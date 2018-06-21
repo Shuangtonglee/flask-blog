@@ -2,6 +2,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
+    SSL_DISABLE = True
     SECRET_KEY = 'HARD TO GUESS'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -24,6 +25,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir,'data_test.sqlite')
 
 class HerokuConfig(Config):
+    SSL_DISABLE = bool(os.environ.get('SSL_DISABLE'))
     MAIL_SERVER = 'smtp.qq.com'
     MAIL_PORT = 465
     MAIL_USE_TLS = False
@@ -34,6 +36,13 @@ class HerokuConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
+    @classmethod
+    def init_app(cls, app):
+        Config.init_app(app)
+
+        # handle proxy server headers
+        from werkzeug.contrib.fixers import ProxyFix
+        app.wsgi_app = ProxyFix(app.wsgi_app)
 
 config = {
     'development':DevelopmentConfig,
