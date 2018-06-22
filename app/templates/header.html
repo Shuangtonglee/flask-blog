@@ -17,6 +17,28 @@
             </div>
             <nav class="mynav">
                 <ul class="orange-text">
+                    <li><a href="{{ url_for('main.index')}}">首页</a></li>
+                    <li class="drop drop2">
+                        <a href="">分类<i class="el-chevron-down"></i> </a>
+                        <div class="drop-nav orange-text drop2-nav">
+                            <ul>
+                                <li><a href="{{ url_for('main.category',category='Python')}}">Python大法</a></li>
+                                <li><a href="{{ url_for('main.category',category='Spider')}}">爬虫</a></li>
+                                <li><a href="{{ url_for('main.category',category='Front-end')}}">前端</a></li>
+                                <li><a href="{{ url_for('main.category',category='Database')}}">数据库</a></li>
+                                <li><a href="{{ url_for('main.category',category='Essay')}}">随笔</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="{{ url_for('main.all') }}">全部文章</a></li>
+                    {% if current_user.role|string() == 'Admin' %}
+                    <li><a href="{{ url_for('main.write') }}">写文章</a></li>
+                        {% if endpoint == '.write' or endpoint == '.edit' %}
+                            <li><a href='javascript:document.my_form.submit();'>发布</a></li><!--a标签实现表单提交功能-->
+                        {% elif endpoint == '.articles' %}
+                            <li><a href="{{ url_for('main.edit',id=post.id ) }}">编辑</a></li>
+                        {% endif %}
+                    {% endif %}
                     <li>{% if current_user.is_authenticated %}
                     <li class="drop drop1">
                         <a href="">{{ current_user.username|string()|truncate_html(4) }}<i class="el-chevron-down"></i> </a>
@@ -29,29 +51,7 @@
                     </li>
                     {% else %}
                     <a href="{{ url_for('auth.login') }}">登录</a>{% endif %}</li>
-
-                    {% if current_user.role|string() == 'Admin' %}
-                    <li><a href="{{ url_for('main.write') }}">写文章</a></li>
-                        {% if endpoint == '.write' or endpoint == '.edit' %}
-                            <li><a href='javascript:document.my_form.submit();'>发布</a></li><!--a标签实现表单提交功能-->
-                        {% elif endpoint == '.articles' %}
-                            <li><a href="{{ url_for('main.edit',id=post.id ) }}">编辑</a></li>
-                        {% endif %}
-                    {% endif %}
-                <li><a href="{{ url_for('main.all') }}">全部文章</a></li>
-                 <li class="drop drop2">
-                        <a href="">分类<i class="el-chevron-down"></i> </a>
-                        <div class="drop-nav orange-text drop2-nav">
-                            <ul>
-                                <li><a href="{{ url_for('main.category',category='Python')}}">Python大法</a></li>
-                                <li><a href="{{ url_for('main.category',category='Spider')}}">爬虫</a></li>
-                                <li><a href="{{ url_for('main.category',category='Front-end')}}">前端</a></li>
-                                <li><a href="{{ url_for('main.category',category='Database')}}">数据库</a></li>
-                                <li><a href="{{ url_for('main.category',category='Essay')}}">随笔</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                <li><a href="{{ url_for('main.index')}}">首页</a></li>
+                    <li style="width: 15%;float: right"><div id="tp-weather-widget"></div></li>
                 </ul>
             </nav>
         </div>

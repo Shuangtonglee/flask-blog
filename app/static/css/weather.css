@@ -1,0 +1,20 @@
+
+.tpwthwidt .text_1vUR5ag, .tpwthwidt .title_2I35arv{
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #566b6e!important;
+    font-size: 16px!important;
+    line-height: 70px!important;
+    height: 70px!important;
+    margin: 0!important;
+    display: inline-block;
+}
+.tpwthwidt .widgetBg10_1thup8w, .tpwthwidt .widgetBg11_2OHumNM,
+.tpwthwidt .widgetBg12_r_HL6Fm, .tpwthwidt .widgetBg13_2bqoUWQ,
+.tpwthwidt .widgetBg14_2vdX_eB, .tpwthwidt .widgetBg15_2np0bae,
+.tpwthwidt .widgetBg19_1Xv926M, .tpwthwidt .widgetBg20_2Jsae9C {
+    background: linear-gradient(#13c5f8,#7d939b)!important;
+}
+@media screen and (min-height: 801px), screen and (min-width: 481px) {
+.tpwthwidt .cover_1fRJ83H:hover .front_2F0Ii3c {
+    opacity: 0.8!important;
+}}
