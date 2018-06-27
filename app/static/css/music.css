@@ -1,0 +1,21 @@
+#songname {
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    line-height: 36px;
+    outline: none;
+}
+#switch {
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+    background: #0084ff;
+    height: 36px;
+    border: none;
+}
+#skPlayer {
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
