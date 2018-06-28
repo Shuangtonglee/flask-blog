@@ -23,14 +23,14 @@ git clone git@github.com:Shuangtonglee/flask-blog.git
 ```
 配置
 ----
-  按需求修改config.py。一些隐私信息采用设置环境变量的方法获得。设置管理员邮箱，然后用管理员邮箱注册即可成管理员。
+　按需求修改config.py。一些隐私信息采用设置环境变量的方法获得。设置管理员邮箱，然后用管理员邮箱注册即可成管理员。
 
 安装
 ----
 ```Bash
 pip install -r requirements #安装依赖
 pip manage.py db upgrade #创建数据库
-python manage.py runserver #运行，浏览器中打开http://127.0.0.1:5000/即可访问
+python manage.py runserver #运行，浏览器中打开http://127.0.0.1:5000/
 ```
 TODO
 ----
