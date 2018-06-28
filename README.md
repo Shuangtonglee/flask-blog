@@ -23,7 +23,7 @@ git clone git@github.com:Shuangtonglee/flask-blog.git
 ```
 配置
 ----
-按需求修改config.py。一些隐私信息采用设置环境变量的方法获得。设置管理员邮箱，然后用管理员邮箱注册即可成管理员。
+  按需求修改config.py。一些隐私信息采用设置环境变量的方法获得。设置管理员邮箱，然后用管理员邮箱注册即可成管理员。
 
 安装
 ----
