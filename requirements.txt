@@ -1,7 +1,7 @@
 alembic==0.9.1
 bleach==2.0.0
 blinker==1.4
-certifi==2017.4.17
+certifi==2022.12.7
 chardet==3.0.3
 click==6.7
 colorama==0.3.9
